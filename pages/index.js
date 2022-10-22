@@ -20,8 +20,9 @@ export default function Home() {
         <button>Login Page</button>
       </Link>
       <div>
-        <h1>Youtube Embed</h1>
-        <YoutubeEmbed embedId="jfKfPfyJRdk" />
+        <Link href="/streamingPage">
+          <button>Watch Streaming</button>
+        </Link>
       </div>
     </div>
   );
