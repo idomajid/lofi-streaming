@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import supabase from "../pages/api/supabase";
 
 export default function SignUpCard({ session }) {
@@ -11,6 +12,7 @@ export default function SignUpCard({ session }) {
   const [faculty, setFaculty] = useState("");
   const [profession, setProfession] = useState("Urologi");
   const [password, setPassword] = useState("");
+
   //   const [verifPassword, setVerifPassword] = useState("");
   const [formError, setFormError] = useState(null);
 
