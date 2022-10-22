@@ -5,13 +5,17 @@ export default function LoginCard() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [formError, setFormError] = useState(null);
+  const [fetchDataUser, setFetchDataUser] = useState();
 
   useEffect(() => {
     const getUserLogin = async () => {
       const {
         data: { user },
       } = await supabase.auth.getUser();
-      console.log(user);
+
+      setFetchDataUser(user.user_metadata);
+
+      console.log({ user });
     };
     getUserLogin();
   }, []);
@@ -39,7 +43,7 @@ export default function LoginCard() {
     }
   };
 
-  const onSignUp = async () => {
+  const onSignOut = async () => {
     const { error } = await supabase.auth.signOut();
 
     if (error) {
@@ -47,6 +51,11 @@ export default function LoginCard() {
     }
   };
 
+  console.log(fetchDataUser);
+
+  if (!fetchDataUser) {
+    return <div>loading!!!!</div>;
+  }
   return (
     <div>
       <form onSubmit={OnLogin}>
@@ -71,10 +80,23 @@ export default function LoginCard() {
           />
         </div>
 
-        <button>Login</button>
+        {!fetchDataUser ? (
+          <button>Login</button>
+        ) : (
+          <button onClick={onSignOut}>Log out</button>
+        )}
         {formError && <p className="error">{formError}</p>}
       </form>
-      <button onClick={onSignUp}>SignUp</button>
+      <div>
+        <ul>
+          <li>{fetchDataUser.city}</li>
+          <li>{fetchDataUser.country}</li>
+          <li>{fetchDataUser.email}</li>
+          <li>{fetchDataUser.faculty}</li>
+          <li>{fetchDataUser.name}</li>
+          <li>{fetchDataUser.profession}</li>
+        </ul>
+      </div>
     </div>
   );
 }
