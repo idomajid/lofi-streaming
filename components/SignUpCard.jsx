@@ -51,23 +51,6 @@ export default function SignUpCard({ session }) {
       },
     });
 
-    // const { data: products, error } = await supabase
-    //   .from("profiles")
-    //   .insert([
-    //     {
-    //       name,
-    //       surname,
-    //       email,
-    //       dob,
-    //       country,
-    //       city,
-    //       faculty,
-    //       profession,
-
-    //     },
-    //   ])
-    //   .select();
-
     if (error) {
       setFormError("Please input the correctly ");
       console.log(error);
@@ -85,10 +68,19 @@ export default function SignUpCard({ session }) {
   };
 
   return (
-    <form onSubmit={CreateUser}>
-      <div>
-        <label htmlFor="name">Name</label>
+    <form
+      className="w-1/2 flex flex-col items-center justify-center gap-2"
+      onSubmit={CreateUser}
+    >
+      <div className="flex flex-col ">
+        <div className="text-2xl antialiased font-small py-5">
+          Create an account
+        </div>
+        <label className="text-sm" htmlFor="name">
+          Name
+        </label>
         <input
+          className="w-80 h-8 border-2 rounded border-grey-800"
           id="name"
           type="text"
           placeholder="Name"
@@ -96,9 +88,12 @@ export default function SignUpCard({ session }) {
           value={name}
         />
       </div>
-      <div>
-        <label htmlFor="surname">Surname</label>
+      <div className="flex flex-col ">
+        <label className="text-sm" htmlFor="surname">
+          Surname
+        </label>
         <input
+          className="w-80 h-8 border-2 rounded border-grey-800"
           id="surname"
           type="text"
           placeholder="Surname"
@@ -106,9 +101,12 @@ export default function SignUpCard({ session }) {
           value={surname}
         />
       </div>
-      <div>
-        <label htmlFor="email">Email</label>
+      <div className="flex flex-col ">
+        <label className="text-sm" htmlFor="email">
+          Email
+        </label>
         <input
+          className="w-80 h-8 border-2 rounded border-grey-800"
           id="email"
           type="text"
           placeholder="Email"
@@ -116,9 +114,12 @@ export default function SignUpCard({ session }) {
           value={email}
         />
       </div>
-      <div>
-        <label htmlFor="dob">Date of Birth</label>
+      <div className="flex flex-col ">
+        <label className="text-sm" htmlFor="dob">
+          Date of Birth
+        </label>
         <input
+          className="w-80 h-8 border-2 rounded border-grey-800"
           id="dob"
           type="text"
           placeholder="Date of Birth"
@@ -126,9 +127,12 @@ export default function SignUpCard({ session }) {
           value={dob}
         />
       </div>
-      <div>
-        <label htmlFor="country">Country</label>
+      <div className="flex flex-col ">
+        <label className="text-sm" htmlFor="country">
+          Country
+        </label>
         <input
+          className="w-80 h-8 border-2 rounded border-grey-800"
           id="country"
           type="text"
           placeholder="Country"
@@ -136,9 +140,12 @@ export default function SignUpCard({ session }) {
           value={country}
         />
       </div>
-      <div>
-        <label htmlFor="city">City</label>
+      <div className="flex flex-col ">
+        <label className="text-sm" htmlFor="city">
+          City
+        </label>
         <input
+          className="w-80 h-8 border-2 rounded border-grey-800"
           id="city"
           type="text"
           placeholder="City"
@@ -146,9 +153,12 @@ export default function SignUpCard({ session }) {
           value={city}
         />
       </div>
-      <div>
-        <label htmlFor="faculty">Faculty/Institution</label>
+      <div className="flex flex-col ">
+        <label className="text-sm" htmlFor="faculty">
+          Faculty/Institution
+        </label>
         <input
+          className="w-80 h-8 border-2 rounded border-grey-800"
           id="faculty"
           type="text"
           placeholder="Faculty/Institution"
@@ -156,9 +166,12 @@ export default function SignUpCard({ session }) {
           value={faculty}
         />
       </div>
-      <div>
-        <label htmlFor="profession">Profession</label>
+      <div className="flex flex-col ">
+        <label className="text-sm" htmlFor="profession">
+          Profession
+        </label>
         <input
+          className="w-80 h-8 border-2 rounded border-grey-800"
           id="profession"
           type="text"
           placeholder="Profession"
@@ -166,9 +179,12 @@ export default function SignUpCard({ session }) {
           value={profession}
         />
       </div>
-      <div>
-        <label htmlFor="password">Password</label>
+      <div className="flex flex-col ">
+        <label className="text-sm" htmlFor="password">
+          Password
+        </label>
         <input
+          className="w-80 h-8 b=2 border-2 rounded border-grey-800"
           id="password"
           type="password"
           placeholder="Enter your password"
@@ -187,7 +203,9 @@ export default function SignUpCard({ session }) {
         />
       </div> */}
       {formError && <p className="error">{formError}</p>}
-      <button>Submit</button>
+      <button className="px-4 py-1 bg-blue-500 rounded text-white font-medium">
+        Create an account
+      </button>
     </form>
   );
 }

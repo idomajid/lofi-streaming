@@ -5,15 +5,17 @@ export default function LoginCard() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [formError, setFormError] = useState(null);
-  const [fetchDataUser, setFetchDataUser] = useState();
+  const [fetchDataUser, setFetchDataUser] = useState(null);
 
   useEffect(() => {
     const getUserLogin = async () => {
       const {
-        data: { user },
+        data: { user, error },
       } = await supabase.auth.getUser();
 
-      setFetchDataUser(user.user_metadata);
+      if (user) {
+        setFetchDataUser(user?.user_metadata);
+      }
 
       console.log({ user });
     };
@@ -53,50 +55,56 @@ export default function LoginCard() {
 
   console.log(fetchDataUser);
 
-  if (!fetchDataUser) {
-    return <div>loading!!!!</div>;
-  }
+  // if (!fetchDataUser) {
+  //   return <div>loading!!!!</div>;
+  // }
   return (
-    <div>
-      <form onSubmit={OnLogin}>
-        <div>
-          <label htmlFor="email">Email</label>
-          <input
-            id="email"
-            type="text"
-            placeholder="Email"
-            onChange={(e) => setEmail(e.target.value)}
-            value={email}
-          />
+    <form
+      className="w-1/2 flex flex-col items-center justify-center gap-2"
+      onSubmit={OnLogin}
+    >
+      <div className="flex flex-col ">
+        <div className="text-2xl antialiased font-small py-5">
+          Login into your Account
         </div>
-        <div>
-          <label htmlFor="password">Password</label>
-          <input
-            id="password"
-            type="password"
-            placeholder="password"
-            onChange={(e) => setPassword(e.target.value)}
-            value={password}
-          />
-        </div>
-
-        {!fetchDataUser ? (
-          <button>Login</button>
-        ) : (
-          <button onClick={onSignOut}>Log out</button>
-        )}
-        {formError && <p className="error">{formError}</p>}
-      </form>
-      <div>
-        <ul>
-          <li>{fetchDataUser.city}</li>
-          <li>{fetchDataUser.country}</li>
-          <li>{fetchDataUser.email}</li>
-          <li>{fetchDataUser.faculty}</li>
-          <li>{fetchDataUser.name}</li>
-          <li>{fetchDataUser.profession}</li>
-        </ul>
+        <label className="text-sm" htmlFor="email">
+          Email
+        </label>
+        <input
+          className="w-80 h-8 border-2 rounded border-grey-800"
+          id="email"
+          type="text"
+          placeholder="Email"
+          onChange={(e) => setEmail(e.target.value)}
+          value={email}
+        />
       </div>
-    </div>
+      <div className="flex flex-col">
+        <label className="text-sm" htmlFor="password">
+          Password
+        </label>
+        <input
+          className="w-80 h-8 border-2 rounded border-grey-800"
+          id="password"
+          type="password"
+          placeholder="password"
+          onChange={(e) => setPassword(e.target.value)}
+          value={password}
+        />
+      </div>
+
+      <button className="px-4 py-1 bg-blue-500 rounded text-white font-medium">
+        Login
+      </button>
+
+      <button
+        className="px-4 py-1 bg-blue-500 rounded text-white font-medium"
+        onClick={onSignOut}
+      >
+        Log out
+      </button>
+
+      {formError && <p className="error">{formError}</p>}
+    </form>
   );
 }
