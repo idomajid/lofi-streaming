@@ -5,9 +5,13 @@ import styles from "../styles/Container.module.css";
 
 export default function Signup() {
   return (
-    <div className={styles.container}>
-      <Header />
-      <SignUpCard />
+    <div>
+      <div className={styles.container}>
+        <Header />
+      </div>
+      <div className="flex flex-col items-center justify-center ">
+        <SignUpCard />
+      </div>
     </div>
   );
 }

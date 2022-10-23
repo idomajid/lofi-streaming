@@ -8,8 +8,11 @@ export default function streamingPage() {
     <div>
       <div className={styles.container}>
         <Header />
-
-        <h1 className="text-7xl">Youtube Embed</h1>
+      </div>
+      <div className="flex flex-col items-center justify-center ">
+        <p className="text-2xl antialiased font-small py-5">
+          This is a live-streaming video
+        </p>
         <YoutubeEmbed embedId="jfKfPfyJRdk" />
       </div>
     </div>
