@@ -93,12 +93,12 @@ export default function LoginCard() {
         />
       </div>
 
-      <button className="px-4 py-1 bg-blue-500 rounded text-white font-medium">
+      <button className="px-4 my-4 py-1 bg-blue-500 rounded text-white font-medium">
         Login
       </button>
 
       <button
-        className="px-4 py-1 bg-blue-500 rounded text-white font-medium"
+        className="px-4  py-1 bg-blue-500 rounded text-white font-medium"
         onClick={onSignOut}
       >
         Log out

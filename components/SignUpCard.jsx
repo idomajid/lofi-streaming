@@ -203,7 +203,7 @@ export default function SignUpCard({ session }) {
         />
       </div> */}
       {formError && <p className="error">{formError}</p>}
-      <button className="px-4 py-1 bg-blue-500 rounded text-white font-medium">
+      <button className="px-4 my-4 py-1 bg-blue-500 rounded text-white font-medium">
         Create an account
       </button>
     </form>
