@@ -82,7 +82,7 @@ export default function SignUpCard({ session }) {
           Name
         </label>
         <input
-          className="w-80 h-8 border-2 rounded border-grey-800"
+          className="indent-2 w-80 h-8 border-2 rounded border-grey-800"
           id="name"
           type="text"
           placeholder="Name"
@@ -95,7 +95,7 @@ export default function SignUpCard({ session }) {
           Surname
         </label>
         <input
-          className="w-80 h-8 border-2 rounded border-grey-800"
+          className="indent-2 w-80 h-8 border-2 rounded border-grey-800"
           id="surname"
           type="text"
           placeholder="Surname"
@@ -108,7 +108,7 @@ export default function SignUpCard({ session }) {
           Email
         </label>
         <input
-          className="w-80 h-8 border-2 rounded border-grey-800"
+          className="indent-2 w-80 h-8 border-2 rounded border-grey-800"
           id="email"
           type="text"
           placeholder="Email"
@@ -121,7 +121,7 @@ export default function SignUpCard({ session }) {
           Date of Birth
         </label>
         <input
-          className="w-80 h-8 border-2 rounded border-grey-800"
+          className="indent-2 w-80 h-8 border-2 rounded border-grey-800"
           id="dob"
           type="text"
           placeholder="Date of Birth"
@@ -134,7 +134,7 @@ export default function SignUpCard({ session }) {
           Country
         </label>
         <input
-          className="w-80 h-8 border-2 rounded border-grey-800"
+          className="indent-2 w-80 h-8 border-2 rounded border-grey-800"
           id="country"
           type="text"
           placeholder="Country"
@@ -147,7 +147,7 @@ export default function SignUpCard({ session }) {
           City
         </label>
         <input
-          className="w-80 h-8 border-2 rounded border-grey-800"
+          className="indent-2 w-80 h-8 border-2 rounded border-grey-800"
           id="city"
           type="text"
           placeholder="City"
@@ -160,7 +160,7 @@ export default function SignUpCard({ session }) {
           Faculty/Institution
         </label>
         <input
-          className="w-80 h-8 border-2 rounded border-grey-800"
+          className="indent-2 w-80 h-8 border-2 rounded border-grey-800"
           id="faculty"
           type="text"
           placeholder="Faculty/Institution"
@@ -173,7 +173,7 @@ export default function SignUpCard({ session }) {
           Profession
         </label>
         <input
-          className="w-80 h-8 border-2 rounded border-grey-800"
+          className="indent-2 w-80 h-8 border-2 rounded border-grey-800"
           id="profession"
           type="text"
           placeholder="Profession"
@@ -186,7 +186,7 @@ export default function SignUpCard({ session }) {
           Password
         </label>
         <input
-          className="w-80 h-8 b=2 border-2 rounded border-grey-800"
+          className="indent-2 w-80 h-8 b=2 border-2 rounded border-grey-800"
           id="password"
           type="password"
           placeholder="Enter your password"

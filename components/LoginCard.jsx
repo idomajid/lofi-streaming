@@ -65,7 +65,7 @@ export default function LoginCard() {
           Email
         </label>
         <input
-          className="w-80 h-8 border-2 rounded border-grey-800"
+          className="indent-2 w-80 h-8 border-2 rounded border-grey-800"
           id="email"
           type="text"
           placeholder="Email"
@@ -78,7 +78,7 @@ export default function LoginCard() {
           Password
         </label>
         <input
-          className="w-80 h-8 border-2 rounded border-grey-800"
+          className="indent-2 w-80 h-8 border-2 rounded border-grey-800"
           id="password"
           type="password"
           placeholder="password"
