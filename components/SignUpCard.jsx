@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { useRouter } from "next/router";
 import supabase from "../pages/api/supabase";
 
 export default function SignUpCard({ session }) {
@@ -16,6 +16,7 @@ export default function SignUpCard({ session }) {
   //   const [verifPassword, setVerifPassword] = useState("");
   const [formError, setFormError] = useState(null);
 
+  const router = useRouter();
   const CreateUser = async (e) => {
     e.preventDefault();
     if (
@@ -59,6 +60,7 @@ export default function SignUpCard({ session }) {
     if (data) {
       console.log({ data });
       setFormError(null);
+      router.push("/login");
     }
     const {
       data: { user },
