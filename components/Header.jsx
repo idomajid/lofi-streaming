@@ -27,7 +27,6 @@ export default function Header() {
 
       if (user) {
         SetGetUser(user);
-        console.log({ user });
       }
     };
     getTheUser();
@@ -53,17 +52,26 @@ export default function Header() {
           </Link>
         )}
         {getUser ? (
-          <button
-            onClick={onSignOut}
-            className="px-4 py-1 bg-blue-500 rounded text-white font-medium text-xs sm:text-base"
-          >
-            Log Out
-          </button>
+          <>
+            <Link href="/personal-profile">
+              <button className="px-4 py-1 bg-blue-500 rounded">
+                <p className="text-white font-medium text-xs lg:text-base md:text-base">
+                  Profile
+                </p>
+              </button>
+            </Link>
+            <button
+              onClick={onSignOut}
+              className="px-4 py-1 bg-blue-500 rounded text-white font-medium text-xs sm:text-base"
+            >
+              Log Out
+            </button>
+          </>
         ) : (
           <>
             <Link href="/signup">
               <button className="px-4 py-1 bg-blue-500 rounded">
-                <p className="text-white   font-medium text-xs lg:text-base md:text-base">
+                <p className="text-white font-medium text-xs lg:text-base md:text-base">
                   Create Account
                 </p>
               </button>
