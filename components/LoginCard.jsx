@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
+
 import supabase from "../pages/api/supabase";
 
 export default function LoginCard() {
@@ -8,6 +10,7 @@ export default function LoginCard() {
   const [formError, setFormError] = useState(null);
   const [fetchDataUser, setFetchDataUser] = useState(null);
 
+  const router = useRouter();
   useEffect(() => {
     const getUserLogin = async () => {
       const {
@@ -43,22 +46,12 @@ export default function LoginCard() {
     if (data) {
       console.log({ data });
       setFormError(null);
+      router.push("/");
     }
   };
 
-  const onSignOut = async () => {
-    const { error } = await supabase.auth.signOut();
+  console.log({ fetchDataUser });
 
-    if (error) {
-      console.log(`${error} from signOut`);
-    }
-  };
-
-  console.log(fetchDataUser);
-
-  // if (!fetchDataUser) {
-  //   return <div>loading!!!!</div>;
-  // }
   return (
     <form
       className="w-1/2 flex flex-col items-center justify-center gap-2"
@@ -93,21 +86,14 @@ export default function LoginCard() {
           value={password}
         />
       </div>
-      <div>
+      {/* <div>
         <Link href="/forgetPassword">
           <a>forgot password</a>
         </Link>
-      </div>
+      </div> */}
 
       <button className="px-4 my-4 py-1 bg-blue-500 rounded text-white font-medium">
         Login
-      </button>
-
-      <button
-        className="px-4  py-1 bg-blue-500 rounded text-white font-medium"
-        onClick={onSignOut}
-      >
-        Log out
       </button>
 
       {formError && <p className="error">{formError}</p>}
