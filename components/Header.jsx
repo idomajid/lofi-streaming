@@ -35,7 +35,7 @@ export default function Header() {
   return (
     <div className="flex md:flex-row h-24 justify-between  items-center flex-col ">
       <div className="text-3xl antialiased font-medium">
-        <Link href="/">Urologi Conference</Link>
+        <Link href="/">Lofi Livestream</Link>
       </div>
       <div className="flex flex-column gap-3">
         {getUser ? (
