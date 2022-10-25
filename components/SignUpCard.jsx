@@ -123,7 +123,7 @@ export default function SignUpCard({ session }) {
         <input
           className="indent-2 w-80 h-8 border-2 rounded border-grey-800"
           id="dob"
-          type="text"
+          type="date"
           placeholder="Date of Birth"
           onChange={(e) => setDOb(e.target.value)}
           value={dob}
