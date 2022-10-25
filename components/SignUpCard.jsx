@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 import supabase from "../pages/api/supabase";
 
-export default function SignUpCard({ session }) {
+export default function SignUpCard() {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [email, setEmail] = useState("");
@@ -10,7 +10,7 @@ export default function SignUpCard({ session }) {
   const [country, setCountry] = useState("");
   const [city, setCity] = useState("");
   const [faculty, setFaculty] = useState("");
-  const [profession, setProfession] = useState("Urologi");
+  const [profession, setProfession] = useState("");
   const [password, setPassword] = useState("");
 
   //   const [verifPassword, setVerifPassword] = useState("");
@@ -20,15 +20,7 @@ export default function SignUpCard({ session }) {
   const CreateUser = async (e) => {
     e.preventDefault();
     if (
-      (!name,
-      !surname,
-      !email,
-      !dob,
-      !country,
-      !city,
-      !faculty,
-      !profession,
-      !password)
+      (!name, !surname, !email, !dob, !password)
       //   !verifPassword)
     ) {
       setFormError("Please input the correctly ");
@@ -79,7 +71,7 @@ export default function SignUpCard({ session }) {
           Create an account
         </div>
         <label className="text-sm" htmlFor="name">
-          Name
+          First Name<span className="text-red-600">*</span>
         </label>
         <input
           className="indent-2 w-80 h-8 border-2 rounded border-grey-800"
@@ -92,7 +84,7 @@ export default function SignUpCard({ session }) {
       </div>
       <div className="flex flex-col ">
         <label className="text-sm" htmlFor="surname">
-          Surname
+          Last Name<span className="text-red-600">*</span>
         </label>
         <input
           className="indent-2 w-80 h-8 border-2 rounded border-grey-800"
@@ -105,7 +97,7 @@ export default function SignUpCard({ session }) {
       </div>
       <div className="flex flex-col ">
         <label className="text-sm" htmlFor="email">
-          Email
+          Email<span className="text-red-600">*</span>
         </label>
         <input
           className="indent-2 w-80 h-8 border-2 rounded border-grey-800"
@@ -118,7 +110,7 @@ export default function SignUpCard({ session }) {
       </div>
       <div className="flex flex-col ">
         <label className="text-sm" htmlFor="dob">
-          Date of Birth
+          Date of Birth<span className="text-red-600">*</span>
         </label>
         <input
           className="indent-2 w-80 h-8 border-2 rounded border-grey-800"
@@ -183,7 +175,7 @@ export default function SignUpCard({ session }) {
       </div>
       <div className="flex flex-col ">
         <label className="text-sm" htmlFor="password">
-          Password
+          Password<span className="text-red-600">*</span>
         </label>
         <input
           className="indent-2 w-80 h-8 b=2 border-2 rounded border-grey-800"
