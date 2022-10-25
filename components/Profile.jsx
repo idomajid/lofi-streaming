@@ -13,7 +13,7 @@ export default function Profile() {
   const [country, setCountry] = useState("");
   const [city, setCity] = useState("");
   const [faculty, setFaculty] = useState("");
-  const [profession, setProfession] = useState("Urologi");
+  const [profession, setProfession] = useState("");
 
   const router = useRouter();
 
@@ -32,6 +32,7 @@ export default function Profile() {
         setCountry(user.user_metadata.country);
         setCity(user.user_metadata.city);
         setFaculty(user.user_metadata.faculty);
+        setProfession(user.user_metadata.profession);
       }
     };
     getTheUser();
