@@ -10,7 +10,7 @@ export default function Home() {
       <div className="py-4 md:py-0">
         <Image
           className="rounded-md"
-          src="/../public/doctor-before.jpg"
+          src="/doctor.jpg"
           alt="Picture of the author"
           width="1500px"
           height="678px"
