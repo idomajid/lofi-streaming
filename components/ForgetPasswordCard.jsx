@@ -1,30 +1,30 @@
 import { useState, useEffect } from "react";
 import supabase from "../pages/api/supabase";
 import Link from "next/link";
+import toast from "react-hot-toast";
 
 export default function ForgetPasswordCard() {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [formError, setFormError] = useState(null);
-  const [fetchDataUser, setFetchDataUser] = useState(null);
 
-  const OnLogin = async (e) => {
+  const [formError, setFormError] = useState(null);
+
+  const onResetPassword = async (e) => {
     e.preventDefault();
-    if ((!email, !password)) {
+    if (!email) {
       setFormError("Please input the correctly ");
       return;
     }
-  };
+    const { data, error } = await supabase.auth.resetPasswordForEmail(email, {
+      redirectTo: "http://localhost:3000/reset-password",
+    });
 
-  const onSignOut = async () => {
-    const { error } = await supabase.auth.signOut();
-
+    if (data) {
+      return toast.success("check your email");
+    }
     if (error) {
-      console.log(`${error} from signOut`);
+      return console.log(error);
     }
   };
-
-  console.log(fetchDataUser);
 
   // if (!fetchDataUser) {
   //   return <div>loading!!!!</div>;
@@ -32,7 +32,7 @@ export default function ForgetPasswordCard() {
   return (
     <form
       className="w-1/2 flex flex-col items-center justify-center gap-2"
-      onSubmit={OnLogin}
+      onSubmit={onResetPassword}
     >
       <div className="flex flex-col ">
         <div className="text-2xl antialiased font-small py-5">
@@ -52,7 +52,7 @@ export default function ForgetPasswordCard() {
       </div>
 
       <button className="px-4 my-4 py-1 bg-blue-500 rounded text-white font-medium">
-        Login
+        Reset Password
       </button>
 
       {formError && <p className="error">{formError}</p>}
