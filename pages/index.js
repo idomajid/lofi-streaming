@@ -1,11 +1,15 @@
 import Image from "next/image";
-import Link from "next/link";
+
 import styles from "../styles/Container.module.css";
 import Header from "../components/Header";
+import Head from "next/head";
 
 export default function Home() {
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Home page</title>
+      </Head>
       <Header />
       <div className="py-4 md:py-0">
         <Image

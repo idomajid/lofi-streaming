@@ -147,7 +147,7 @@ export default function SignUpCard() {
           value={city}
         />
       </div>
-      <div className="flex flex-col ">
+      {/* <div className="flex flex-col ">
         <label className="text-sm" htmlFor="faculty">
           Faculty/Institution
         </label>
@@ -172,7 +172,7 @@ export default function SignUpCard() {
           onChange={(e) => setProfession(e.target.value)}
           value={profession}
         />
-      </div>
+      </div> */}
       <div className="flex flex-col ">
         <label className="text-sm" htmlFor="password">
           Password<span className="text-red-600">*</span>

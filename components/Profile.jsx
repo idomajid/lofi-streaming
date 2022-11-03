@@ -133,7 +133,7 @@ export default function Profile() {
             disabled
           />
         </div>
-        <div className="flex flex-col ">
+        {/* <div className="flex flex-col ">
           <label className="text-sm" htmlFor="faculty">
             Faculty/Institution
           </label>
@@ -158,7 +158,7 @@ export default function Profile() {
             value={profession}
             disabled
           />
-        </div>
+        </div> */}
       </div>
     </form>
   );

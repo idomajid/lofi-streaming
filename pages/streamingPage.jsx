@@ -6,6 +6,7 @@ import styles from "../styles/Container.module.css";
 import Header from "../components/Header";
 import RealtimeSchedule from "../components/RealtimeSchedule";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 export default function streamingPage() {
   const [getUser, SetGetUser] = useState(null);
@@ -32,6 +33,11 @@ export default function streamingPage() {
     return (
       <div className={styles.container}>
         <div>
+          <Head>
+            <title>Direct to login page </title>
+          </Head>
+        </div>
+        <div>
           <Header />
         </div>
         <div className="flex flex-col items-center justify-center ">
@@ -45,6 +51,9 @@ export default function streamingPage() {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Live Stream Lofi</title>
+      </Head>
       <div>
         <Header />
       </div>
